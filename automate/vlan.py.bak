@@ -1,0 +1,17 @@
+from pprint import pprint
+from jnpr.junos.op.vlan import VlanTable
+from jnpr.junos import Device
+import pdb
+
+dev = Device(host='bng-dcnb1-qfx3500-a.englab.juniper.net', user='root', password='Embe1mpls')
+dev.open()
+#pprint(dev.facts)
+#pdb.set_trace()
+vlan_info = dev.cli( "show ethernet-switching interface ge-0/0/16" )
+if vlan_info.find('test') != -1:
+    print "found vlan"
+
+#print vlan_id
+#vlan_type = type(vlan_id)
+#print vlan_type
+dev.close()

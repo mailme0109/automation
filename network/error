@@ -1,0 +1,633 @@
+FAIL: tempest.api.network.test_routers.RoutersTest.test_add_multiple_router_interfaces[id-802c73c9-c937-4cef-824b-2191e24a6aab,smoke]
+----------------------------------------------------------------------
+_StringException: pythonlogging:'': {{{
+2015-12-18 12:15:24,871 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_add_multiple_router_interfaces): 200 POST http://10.206.44.175:5000/v2.0/tokens
+2015-12-18 12:15:24,872 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '4494', 'vary': 'X-Auth-Token', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:24 GMT', 'content-type': 'application/json', 'x-openstack-request-id': 'req-a64702b6-e81b-48a3-92a1-afdf102ac48c'}
+        Body: None
+2015-12-18 12:15:25,271 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_add_multiple_router_interfaces): 201 POST http://10.206.44.175:9696/v2.0/networks 0.398s
+2015-12-18 12:15:25,271 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"network": {"name": "router-network01--1762166443"}}
+    Response - Headers: {'status': '201', 'content-length': '368', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:25 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-22af4c9e-8165-4385-831f-ec8f4c3902a0'}
+        Body: {"network": {"status": "ACTIVE", "subnets": [], "name": "router-network01--1762166443", "provider:physical_network": "physnet1", "router:external": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "admin_state_up": true, "mtu": 0, "shared": false, "provider:network_type": "vlan", "id": "7dfbf275-9080-4f76-92ff-0224898d456f", "provider:segmentation_id": 1005}}
+2015-12-18 12:15:25,328 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_add_multiple_router_interfaces): 201 POST http://10.206.44.175:9696/v2.0/networks 0.056s
+2015-12-18 12:15:25,329 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"network": {"name": "router-network02--203442664"}}
+    Response - Headers: {'status': '201', 'content-length': '367', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:25 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-722fe719-7cf6-486e-8376-6beaf6132c8b'}
+        Body: {"network": {"status": "ACTIVE", "subnets": [], "name": "router-network02--203442664", "provider:physical_network": "physnet1", "router:external": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "admin_state_up": true, "mtu": 0, "shared": false, "provider:network_type": "vlan", "id": "2189ccbd-dffa-4a63-970b-ad7e6e7edcf8", "provider:segmentation_id": 1003}}
+2015-12-18 12:15:25,446 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_add_multiple_router_interfaces): 201 POST http://10.206.44.175:9696/v2.0/subnets 0.117s
+2015-12-18 12:15:25,447 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet": {"ip_version": 4, "network_id": "7dfbf275-9080-4f76-92ff-0224898d456f", "cidr": "10.100.0.0/28", "gateway_ip": "10.100.0.1"}}
+    Response - Headers: {'status': '201', 'content-length': '447', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:25 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-f8a7d9fb-cdfb-40c0-adab-d3963a7d7bfb'}
+        Body: {"subnet": {"name": "", "enable_dhcp": true, "network_id": "7dfbf275-9080-4f76-92ff-0224898d456f", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "dns_nameservers": [], "gateway_ip": "10.100.0.1", "ipv6_ra_mode": null, "allocation_pools": [{"start": "10.100.0.2", "end": "10.100.0.14"}], "host_routes": [], "ip_version": 4, "ipv6_address_mode": null, "cidr": "10.100.0.0/28", "id": "cc81d482-e645-4340-9b1d-02ad96d97561", "subnetpool_id": null}}
+2015-12-18 12:15:25,563 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_add_multiple_router_interfaces): 201 POST http://10.206.44.175:9696/v2.0/subnets 0.115s
+2015-12-18 12:15:25,563 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet": {"ip_version": 4, "network_id": "2189ccbd-dffa-4a63-970b-ad7e6e7edcf8", "cidr": "10.101.0.0/28", "gateway_ip": "10.101.0.1"}}
+    Response - Headers: {'status': '201', 'content-length': '447', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:25 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-0be69b70-2e6d-4fd1-b8e0-ec64d8a1df9d'}
+        Body: {"subnet": {"name": "", "enable_dhcp": true, "network_id": "2189ccbd-dffa-4a63-970b-ad7e6e7edcf8", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "dns_nameservers": [], "gateway_ip": "10.101.0.1", "ipv6_ra_mode": null, "allocation_pools": [{"start": "10.101.0.2", "end": "10.101.0.14"}], "host_routes": [], "ip_version": 4, "ipv6_address_mode": null, "cidr": "10.101.0.0/28", "id": "a1eb9714-1ab6-4ebd-af02-69e7601a1045", "subnetpool_id": null}}
+2015-12-18 12:15:37,539 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_add_multiple_router_interfaces): 500 POST http://10.206.44.175:9696/v2.0/routers 11.975s
+2015-12-18 12:15:37,539 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {}, "name": "router--378683440", "admin_state_up": false}}
+    Response - Headers: {'status': '500', 'content-length': '150', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:37 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-b65e1f47-49b6-4aa7-ade9-5fc8bbeccf58'}
+        Body: {"NeutronError": {"message": "Request Failed: internal server error while processing your request.", "type": "HTTPInternalServerError", "detail": ""}}
+}}}
+
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 325, in test_add_multiple_router_interfaces
+    router = self._create_router(data_utils.rand_name('router-'))
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/base_routers.py", line 32, in _create_router
+    external_network_id, enable_snat)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/base.py", line 272, in create_router
+    admin_state_up=admin_state_up, **kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 297, in create_router
+    resp, body = self.post(uri, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 252, in post
+    return self.request('POST', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 734, in _error_checker
+    raise exceptions.ServerFault(message)
+ServerFault: Got server fault
+Details: Request Failed: internal server error while processing your request.
+
+-------------------- >> begin captured logging << --------------------
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_add_multiple_router_interfaces): 200 POST http://10.206.44.175:5000/v2.0/tokens
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '4494', 'vary': 'X-Auth-Token', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:24 GMT', 'content-type': 'application/json', 'x-openstack-request-id': 'req-a64702b6-e81b-48a3-92a1-afdf102ac48c'}
+        Body: None
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_add_multiple_router_interfaces): 201 POST http://10.206.44.175:9696/v2.0/networks 0.398s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"network": {"name": "router-network01--1762166443"}}
+    Response - Headers: {'status': '201', 'content-length': '368', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:25 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-22af4c9e-8165-4385-831f-ec8f4c3902a0'}
+        Body: {"network": {"status": "ACTIVE", "subnets": [], "name": "router-network01--1762166443", "provider:physical_network": "physnet1", "router:external": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "admin_state_up": true, "mtu": 0, "shared": false, "provider:network_type": "vlan", "id": "7dfbf275-9080-4f76-92ff-0224898d456f", "provider:segmentation_id": 1005}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_add_multiple_router_interfaces): 201 POST http://10.206.44.175:9696/v2.0/networks 0.056s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"network": {"name": "router-network02--203442664"}}
+    Response - Headers: {'status': '201', 'content-length': '367', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:25 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-722fe719-7cf6-486e-8376-6beaf6132c8b'}
+        Body: {"network": {"status": "ACTIVE", "subnets": [], "name": "router-network02--203442664", "provider:physical_network": "physnet1", "router:external": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "admin_state_up": true, "mtu": 0, "shared": false, "provider:network_type": "vlan", "id": "2189ccbd-dffa-4a63-970b-ad7e6e7edcf8", "provider:segmentation_id": 1003}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_add_multiple_router_interfaces): 201 POST http://10.206.44.175:9696/v2.0/subnets 0.117s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet": {"ip_version": 4, "network_id": "7dfbf275-9080-4f76-92ff-0224898d456f", "cidr": "10.100.0.0/28", "gateway_ip": "10.100.0.1"}}
+    Response - Headers: {'status': '201', 'content-length': '447', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:25 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-f8a7d9fb-cdfb-40c0-adab-d3963a7d7bfb'}
+        Body: {"subnet": {"name": "", "enable_dhcp": true, "network_id": "7dfbf275-9080-4f76-92ff-0224898d456f", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "dns_nameservers": [], "gateway_ip": "10.100.0.1", "ipv6_ra_mode": null, "allocation_pools": [{"start": "10.100.0.2", "end": "10.100.0.14"}], "host_routes": [], "ip_version": 4, "ipv6_address_mode": null, "cidr": "10.100.0.0/28", "id": "cc81d482-e645-4340-9b1d-02ad96d97561", "subnetpool_id": null}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_add_multiple_router_interfaces): 201 POST http://10.206.44.175:9696/v2.0/subnets 0.115s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet": {"ip_version": 4, "network_id": "2189ccbd-dffa-4a63-970b-ad7e6e7edcf8", "cidr": "10.101.0.0/28", "gateway_ip": "10.101.0.1"}}
+    Response - Headers: {'status': '201', 'content-length': '447', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:25 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-0be69b70-2e6d-4fd1-b8e0-ec64d8a1df9d'}
+        Body: {"subnet": {"name": "", "enable_dhcp": true, "network_id": "2189ccbd-dffa-4a63-970b-ad7e6e7edcf8", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "dns_nameservers": [], "gateway_ip": "10.101.0.1", "ipv6_ra_mode": null, "allocation_pools": [{"start": "10.101.0.2", "end": "10.101.0.14"}], "host_routes": [], "ip_version": 4, "ipv6_address_mode": null, "cidr": "10.101.0.0/28", "id": "a1eb9714-1ab6-4ebd-af02-69e7601a1045", "subnetpool_id": null}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_add_multiple_router_interfaces): 500 POST http://10.206.44.175:9696/v2.0/routers 11.975s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {}, "name": "router--378683440", "admin_state_up": false}}
+    Response - Headers: {'status': '500', 'content-length': '150', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:45:37 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-b65e1f47-49b6-4aa7-ade9-5fc8bbeccf58'}
+        Body: {"NeutronError": {"message": "Request Failed: internal server error while processing your request.", "type": "HTTPInternalServerError", "detail": ""}}
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: tempest.api.network.test_routers.RoutersTest.test_create_router_with_default_snat_value[id-847257cc-6afd-4154-b8fb-af49f5670ce8]
+----------------------------------------------------------------------
+_StringException: pythonlogging:'': {{{
+2015-12-18 12:17:44,701 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_create_router_with_default_snat_value): 404 POST http://10.206.44.175:9696/v2.0/routers 0.162s
+2015-12-18 12:17:44,701 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9"}, "name": "router-1281178117", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:47:44 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-7602268c-f90b-401d-ad63-68da05b3b75c'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+}}}
+
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/test.py", line 171, in wrapper
+    return func(*func_args, **func_kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 110, in test_create_router_with_default_snat_value
+    name, external_network_id=CONF.network.public_network_id)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/base_routers.py", line 32, in _create_router
+    external_network_id, enable_snat)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/base.py", line 272, in create_router
+    admin_state_up=admin_state_up, **kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 297, in create_router
+    resp, body = self.post(uri, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 252, in post
+    return self.request('POST', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 675, in _error_checker
+    raise exceptions.NotFound(resp_body)
+NotFound: Object not found
+Details: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+
+-------------------- >> begin captured logging << --------------------
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_create_router_with_default_snat_value): 404 POST http://10.206.44.175:9696/v2.0/routers 0.162s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9"}, "name": "router-1281178117", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:47:44 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-7602268c-f90b-401d-ad63-68da05b3b75c'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: tempest.api.network.test_routers.RoutersTest.test_create_router_with_snat_explicit[id-ea74068d-09e9-4fd7-8995-9b6a1ace920f]
+----------------------------------------------------------------------
+_StringException: pythonlogging:'': {{{
+2015-12-18 12:17:44,833 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_create_router_with_snat_explicit): 404 POST http://10.206.44.175:9696/v2.0/routers 0.119s
+2015-12-18 12:17:44,834 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9", "enable_snat": false}, "name": "snat-router-1585084500", "admin_state_up": true}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:47:44 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-5510fd75-bd50-4365-86e2-7cddce984b98'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+}}}
+
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/test.py", line 171, in wrapper
+    return func(*func_args, **func_kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 126, in test_create_router_with_snat_explicit
+    name, external_gateway_info=external_gateway_info)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 297, in create_router
+    resp, body = self.post(uri, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 252, in post
+    return self.request('POST', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 675, in _error_checker
+    raise exceptions.NotFound(resp_body)
+NotFound: Object not found
+Details: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+
+-------------------- >> begin captured logging << --------------------
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_create_router_with_snat_explicit): 404 POST http://10.206.44.175:9696/v2.0/routers 0.119s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9", "enable_snat": false}, "name": "snat-router-1585084500", "admin_state_up": true}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:47:44 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-5510fd75-bd50-4365-86e2-7cddce984b98'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: tempest.api.network.test_routers.RoutersTest.test_create_show_list_update_delete_router[id-f64403e2-8483-4b34-8ccd-b09a87bcc68c,smoke]
+----------------------------------------------------------------------
+_StringException: pythonlogging:'': {{{
+2015-12-18 12:17:44,875 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_create_show_list_update_delete_router): 404 POST http://10.206.44.175:9696/v2.0/routers 0.039s
+2015-12-18 12:17:44,875 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9"}, "name": "router--441351979", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:47:44 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-372ea08b-33ee-4d9b-8c17-370205fd0d84'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+}}}
+
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 58, in test_create_show_list_update_delete_router
+    admin_state_up=False)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 297, in create_router
+    resp, body = self.post(uri, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 252, in post
+    return self.request('POST', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 675, in _error_checker
+    raise exceptions.NotFound(resp_body)
+NotFound: Object not found
+Details: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+
+-------------------- >> begin captured logging << --------------------
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_create_show_list_update_delete_router): 404 POST http://10.206.44.175:9696/v2.0/routers 0.039s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9"}, "name": "router--441351979", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:47:44 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-372ea08b-33ee-4d9b-8c17-370205fd0d84'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: tempest.api.network.test_routers.RoutersTest.test_update_extra_route[id-c86ac3a8-50bd-4b00-a6b8-62af84a0765c]
+----------------------------------------------------------------------
+_StringException: pythonlogging:'': {{{
+2015-12-18 12:17:44,930 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_extra_route): 201 POST http://10.206.44.175:9696/v2.0/networks 0.053s
+2015-12-18 12:17:44,931 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"network": {"name": "test-network--1929858167"}}
+    Response - Headers: {'status': '201', 'content-length': '364', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:47:44 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-4b714302-1afb-4846-8900-64d4a291bfbe'}
+        Body: {"network": {"status": "ACTIVE", "subnets": [], "name": "test-network--1929858167", "provider:physical_network": "physnet1", "router:external": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "admin_state_up": true, "mtu": 0, "shared": false, "provider:network_type": "vlan", "id": "83abc526-ef90-4f15-ab8d-5651c0264d3c", "provider:segmentation_id": 1000}}
+2015-12-18 12:17:45,181 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_extra_route): 201 POST http://10.206.44.175:9696/v2.0/subnets 0.250s
+2015-12-18 12:17:45,181 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet": {"ip_version": 4, "network_id": "83abc526-ef90-4f15-ab8d-5651c0264d3c", "cidr": "10.100.0.0/28", "gateway_ip": "10.100.0.1"}}
+    Response - Headers: {'status': '201', 'content-length': '447', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:47:45 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-8771d303-b046-4451-b82a-4f9b13b6a2aa'}
+        Body: {"subnet": {"name": "", "enable_dhcp": true, "network_id": "83abc526-ef90-4f15-ab8d-5651c0264d3c", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "dns_nameservers": [], "gateway_ip": "10.100.0.1", "ipv6_ra_mode": null, "allocation_pools": [{"start": "10.100.0.2", "end": "10.100.0.14"}], "host_routes": [], "ip_version": 4, "ipv6_address_mode": null, "cidr": "10.100.0.0/28", "id": "c57f68bb-743e-48a6-9365-3b8c73989d01", "subnetpool_id": null}}
+2015-12-18 12:18:02,514 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_extra_route): 201 POST http://10.206.44.175:9696/v2.0/routers 17.331s
+2015-12-18 12:18:02,514 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {}, "name": "router--1118715436", "admin_state_up": true}}
+    Response - Headers: {'status': '201', 'content-length': '212', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:02 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-446180ba-1a0e-4aed-9234-d92e5dee699c'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--1118715436", "admin_state_up": true, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "a515cfed-fca3-4269-88e7-44ea55017351"}}
+2015-12-18 12:18:10,399 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_extra_route): 200 PUT http://10.206.44.175:9696/v2.0/routers/a515cfed-fca3-4269-88e7-44ea55017351/add_router_interface 7.884s
+2015-12-18 12:18:10,399 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet_id": "c57f68bb-743e-48a6-9365-3b8c73989d01"}
+    Response - Headers: {'status': '200', 'content-length': '255', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:10 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-27c0cabe-84c9-4654-8032-3d7a3b6d5322'}
+        Body: {"subnet_id": "c57f68bb-743e-48a6-9365-3b8c73989d01", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "subnet_ids": ["c57f68bb-743e-48a6-9365-3b8c73989d01"], "port_id": "a121d72a-5118-4412-a6f0-72bf9bcef1d5", "id": "a515cfed-fca3-4269-88e7-44ea55017351"}
+2015-12-18 12:18:10,416 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_extra_route): 400 PUT http://10.206.44.175:9696/v2.0/routers/a515cfed-fca3-4269-88e7-44ea55017351 0.015s
+2015-12-18 12:18:10,416 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"routes": [{"destination": "10.100.0.0/28", "nexthop": "10.100.0.2"}]}}
+    Response - Headers: {'status': '400', 'content-length': '107', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:10 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-130499fd-4ca4-4d08-99b5-958fa73a51d1'}
+        Body: {"NeutronError": {"message": "Unrecognized attribute(s) 'routes'", "type": "HTTPBadRequest", "detail": ""}}
+2015-12-18 12:18:10,442 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:_run_cleanups): 400 PUT http://10.206.44.175:9696/v2.0/routers/a515cfed-fca3-4269-88e7-44ea55017351 0.024s
+2015-12-18 12:18:10,442 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"routes": null}}
+    Response - Headers: {'status': '400', 'content-length': '107', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:10 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-3db1cebd-1808-4799-99a2-e5ddfff880c8'}
+        Body: {"NeutronError": {"message": "Unrecognized attribute(s) 'routes'", "type": "HTTPBadRequest", "detail": ""}}
+2015-12-18 12:18:10,476 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:_run_cleanups): 200 GET http://10.206.44.175:9696/v2.0/ports?device_id=a515cfed-fca3-4269-88e7-44ea55017351 0.033s
+2015-12-18 12:18:10,476 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '659', 'content-location': 'http://10.206.44.175:9696/v2.0/ports?device_id=a515cfed-fca3-4269-88e7-44ea55017351', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:10 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-93f3c985-45e6-4625-b325-c2861451238e'}
+        Body: {"ports": [{"status": "ACTIVE", "binding:host_id": "", "allowed_address_pairs": [], "extra_dhcp_opts": [], "device_owner": "network:router_interface", "binding:profile": {}, "fixed_ips": [{"subnet_id": "c57f68bb-743e-48a6-9365-3b8c73989d01", "ip_address": "10.100.0.1"}], "id": "a121d72a-5118-4412-a6f0-72bf9bcef1d5", "security_groups": [], "device_id": "a515cfed-fca3-4269-88e7-44ea55017351", "name": "", "admin_state_up": true, "network_id": "83abc526-ef90-4f15-ab8d-5651c0264d3c", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "binding:vif_details": {}, "binding:vnic_type": "normal", "binding:vif_type": "unbound", "mac_address": "fa:16:3e:86:db:28"}]}
+2015-12-18 12:18:19,817 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:_run_cleanups): 200 PUT http://10.206.44.175:9696/v2.0/routers/a515cfed-fca3-4269-88e7-44ea55017351/remove_router_interface 9.340s
+2015-12-18 12:18:19,817 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet_id": "c57f68bb-743e-48a6-9365-3b8c73989d01"}
+    Response - Headers: {'status': '200', 'content-length': '255', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:19 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-8842d8d3-14e1-414b-b697-104984fd60c8'}
+        Body: {"subnet_id": "c57f68bb-743e-48a6-9365-3b8c73989d01", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "subnet_ids": ["c57f68bb-743e-48a6-9365-3b8c73989d01"], "port_id": "a121d72a-5118-4412-a6f0-72bf9bcef1d5", "id": "a515cfed-fca3-4269-88e7-44ea55017351"}
+2015-12-18 12:18:27,084 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:_run_cleanups): 204 DELETE http://10.206.44.175:9696/v2.0/routers/a515cfed-fca3-4269-88e7-44ea55017351 7.266s
+2015-12-18 12:18:27,084 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Fri, 18 Dec 2015 06:48:27 GMT', 'status': '204', 'connection': 'close', 'content-length': '0', 'x-openstack-request-id': 'req-a5bcf4a6-48fa-434a-8944-ffe297279d50'}
+        Body:
+}}}
+
+traceback-1: {{{
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 302, in _delete_extra_routes
+    self.client.delete_extra_routes(router_id)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 535, in delete_extra_routes
+    resp, body = self.put(uri, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 315, in put
+    return self.request('PUT', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 680, in _error_checker
+    raise exceptions.BadRequest(resp_body)
+BadRequest: Bad request
+Details: {u'message': u"Unrecognized attribute(s) 'routes'", u'type': u'HTTPBadRequest', u'detail': u''}
+}}}
+
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/test.py", line 171, in wrapper
+    return func(*func_args, **func_kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 289, in test_update_extra_route
+    next_hop, destination)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 521, in update_extra_routes
+    resp, body = self.put(uri, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 315, in put
+    return self.request('PUT', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 680, in _error_checker
+    raise exceptions.BadRequest(resp_body)
+BadRequest: Bad request
+Details: {u'message': u"Unrecognized attribute(s) 'routes'", u'type': u'HTTPBadRequest', u'detail': u''}
+
+-------------------- >> begin captured logging << --------------------
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_extra_route): 201 POST http://10.206.44.175:9696/v2.0/networks 0.053s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"network": {"name": "test-network--1929858167"}}
+    Response - Headers: {'status': '201', 'content-length': '364', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:47:44 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-4b714302-1afb-4846-8900-64d4a291bfbe'}
+        Body: {"network": {"status": "ACTIVE", "subnets": [], "name": "test-network--1929858167", "provider:physical_network": "physnet1", "router:external": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "admin_state_up": true, "mtu": 0, "shared": false, "provider:network_type": "vlan", "id": "83abc526-ef90-4f15-ab8d-5651c0264d3c", "provider:segmentation_id": 1000}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_extra_route): 201 POST http://10.206.44.175:9696/v2.0/subnets 0.250s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet": {"ip_version": 4, "network_id": "83abc526-ef90-4f15-ab8d-5651c0264d3c", "cidr": "10.100.0.0/28", "gateway_ip": "10.100.0.1"}}
+    Response - Headers: {'status': '201', 'content-length': '447', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:47:45 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-8771d303-b046-4451-b82a-4f9b13b6a2aa'}
+        Body: {"subnet": {"name": "", "enable_dhcp": true, "network_id": "83abc526-ef90-4f15-ab8d-5651c0264d3c", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "dns_nameservers": [], "gateway_ip": "10.100.0.1", "ipv6_ra_mode": null, "allocation_pools": [{"start": "10.100.0.2", "end": "10.100.0.14"}], "host_routes": [], "ip_version": 4, "ipv6_address_mode": null, "cidr": "10.100.0.0/28", "id": "c57f68bb-743e-48a6-9365-3b8c73989d01", "subnetpool_id": null}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_extra_route): 201 POST http://10.206.44.175:9696/v2.0/routers 17.331s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {}, "name": "router--1118715436", "admin_state_up": true}}
+    Response - Headers: {'status': '201', 'content-length': '212', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:02 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-446180ba-1a0e-4aed-9234-d92e5dee699c'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--1118715436", "admin_state_up": true, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "a515cfed-fca3-4269-88e7-44ea55017351"}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_extra_route): 200 PUT http://10.206.44.175:9696/v2.0/routers/a515cfed-fca3-4269-88e7-44ea55017351/add_router_interface 7.884s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet_id": "c57f68bb-743e-48a6-9365-3b8c73989d01"}
+    Response - Headers: {'status': '200', 'content-length': '255', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:10 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-27c0cabe-84c9-4654-8032-3d7a3b6d5322'}
+        Body: {"subnet_id": "c57f68bb-743e-48a6-9365-3b8c73989d01", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "subnet_ids": ["c57f68bb-743e-48a6-9365-3b8c73989d01"], "port_id": "a121d72a-5118-4412-a6f0-72bf9bcef1d5", "id": "a515cfed-fca3-4269-88e7-44ea55017351"}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_extra_route): 400 PUT http://10.206.44.175:9696/v2.0/routers/a515cfed-fca3-4269-88e7-44ea55017351 0.015s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"routes": [{"destination": "10.100.0.0/28", "nexthop": "10.100.0.2"}]}}
+    Response - Headers: {'status': '400', 'content-length': '107', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:10 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-130499fd-4ca4-4d08-99b5-958fa73a51d1'}
+        Body: {"NeutronError": {"message": "Unrecognized attribute(s) 'routes'", "type": "HTTPBadRequest", "detail": ""}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:_run_cleanups): 400 PUT http://10.206.44.175:9696/v2.0/routers/a515cfed-fca3-4269-88e7-44ea55017351 0.024s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"routes": null}}
+    Response - Headers: {'status': '400', 'content-length': '107', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:10 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-3db1cebd-1808-4799-99a2-e5ddfff880c8'}
+        Body: {"NeutronError": {"message": "Unrecognized attribute(s) 'routes'", "type": "HTTPBadRequest", "detail": ""}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:_run_cleanups): 200 GET http://10.206.44.175:9696/v2.0/ports?device_id=a515cfed-fca3-4269-88e7-44ea55017351 0.033s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '659', 'content-location': 'http://10.206.44.175:9696/v2.0/ports?device_id=a515cfed-fca3-4269-88e7-44ea55017351', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:10 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-93f3c985-45e6-4625-b325-c2861451238e'}
+        Body: {"ports": [{"status": "ACTIVE", "binding:host_id": "", "allowed_address_pairs": [], "extra_dhcp_opts": [], "device_owner": "network:router_interface", "binding:profile": {}, "fixed_ips": [{"subnet_id": "c57f68bb-743e-48a6-9365-3b8c73989d01", "ip_address": "10.100.0.1"}], "id": "a121d72a-5118-4412-a6f0-72bf9bcef1d5", "security_groups": [], "device_id": "a515cfed-fca3-4269-88e7-44ea55017351", "name": "", "admin_state_up": true, "network_id": "83abc526-ef90-4f15-ab8d-5651c0264d3c", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "binding:vif_details": {}, "binding:vnic_type": "normal", "binding:vif_type": "unbound", "mac_address": "fa:16:3e:86:db:28"}]}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:_run_cleanups): 200 PUT http://10.206.44.175:9696/v2.0/routers/a515cfed-fca3-4269-88e7-44ea55017351/remove_router_interface 9.340s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"subnet_id": "c57f68bb-743e-48a6-9365-3b8c73989d01"}
+    Response - Headers: {'status': '200', 'content-length': '255', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:19 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-8842d8d3-14e1-414b-b697-104984fd60c8'}
+        Body: {"subnet_id": "c57f68bb-743e-48a6-9365-3b8c73989d01", "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "subnet_ids": ["c57f68bb-743e-48a6-9365-3b8c73989d01"], "port_id": "a121d72a-5118-4412-a6f0-72bf9bcef1d5", "id": "a515cfed-fca3-4269-88e7-44ea55017351"}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:_run_cleanups): 204 DELETE http://10.206.44.175:9696/v2.0/routers/a515cfed-fca3-4269-88e7-44ea55017351 7.266s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Fri, 18 Dec 2015 06:48:27 GMT', 'status': '204', 'connection': 'close', 'content-length': '0', 'x-openstack-request-id': 'req-a5bcf4a6-48fa-434a-8944-ffe297279d50'}
+        Body: 
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: tempest.api.network.test_routers.RoutersTest.test_update_router_reset_gateway_without_snat[id-f2faf994-97f4-410b-a831-9bc977b64374]
+----------------------------------------------------------------------
+_StringException: pythonlogging:'': {{{
+2015-12-18 12:18:41,744 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_reset_gateway_without_snat): 404 POST http://10.206.44.175:9696/v2.0/routers 0.043s
+2015-12-18 12:18:41,745 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9"}, "name": "router--909419336", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:41 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-fcee33f2-217e-44d2-beb4-27349ca299f3'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+}}}
+
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/test.py", line 171, in wrapper
+    return func(*func_args, **func_kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 258, in test_update_router_reset_gateway_without_snat
+    external_network_id=CONF.network.public_network_id)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/base_routers.py", line 32, in _create_router
+    external_network_id, enable_snat)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/base.py", line 272, in create_router
+    admin_state_up=admin_state_up, **kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 297, in create_router
+    resp, body = self.post(uri, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 252, in post
+    return self.request('POST', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 675, in _error_checker
+    raise exceptions.NotFound(resp_body)
+NotFound: Object not found
+Details: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+
+-------------------- >> begin captured logging << --------------------
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_reset_gateway_without_snat): 404 POST http://10.206.44.175:9696/v2.0/routers 0.043s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9"}, "name": "router--909419336", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:41 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-fcee33f2-217e-44d2-beb4-27349ca299f3'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway[id-6cc285d8-46bf-4f36-9b1a-783e3008ba79]
+----------------------------------------------------------------------
+_StringException: pythonlogging:'': {{{
+2015-12-18 12:18:49,273 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_set_gateway): 201 POST http://10.206.44.175:9696/v2.0/routers 7.527s
+2015-12-18 12:18:49,274 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {}, "name": "router--1705182251", "admin_state_up": false}}
+    Response - Headers: {'status': '201', 'content-length': '213', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:49 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-390dbb54-7504-4916-89d7-69c9de2aca27'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--1705182251", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "b5dc5179-b2a4-4612-82c1-0bd26cce8608"}}
+2015-12-18 12:18:49,308 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_set_gateway): 200 GET http://10.206.44.175:9696/v2.0/routers/b5dc5179-b2a4-4612-82c1-0bd26cce8608 0.034s
+2015-12-18 12:18:49,309 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '213', 'content-location': 'http://10.206.44.175:9696/v2.0/routers/b5dc5179-b2a4-4612-82c1-0bd26cce8608', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:49 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-73a63c06-9d91-453b-b882-ee552d08b76c'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--1705182251", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "b5dc5179-b2a4-4612-82c1-0bd26cce8608"}}
+2015-12-18 12:18:49,403 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_set_gateway): 404 PUT http://10.206.44.175:9696/v2.0/routers/b5dc5179-b2a4-4612-82c1-0bd26cce8608 0.093s
+2015-12-18 12:18:49,403 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9"}, "name": "router--1705182251", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:49 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-2ef3fcdc-d4cd-4245-a822-661af1bd7236'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+2015-12-18 12:18:49,423 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:_run_cleanups): 200 GET http://10.206.44.175:9696/v2.0/ports?device_id=b5dc5179-b2a4-4612-82c1-0bd26cce8608 0.019s
+2015-12-18 12:18:49,423 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '13', 'content-location': 'http://10.206.44.175:9696/v2.0/ports?device_id=b5dc5179-b2a4-4612-82c1-0bd26cce8608', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:49 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-1d574855-320c-4a33-9389-4251ef01b215'}
+        Body: {"ports": []}
+2015-12-18 12:18:55,790 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:_run_cleanups): 204 DELETE http://10.206.44.175:9696/v2.0/routers/b5dc5179-b2a4-4612-82c1-0bd26cce8608 6.366s
+2015-12-18 12:18:55,790 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Fri, 18 Dec 2015 06:48:55 GMT', 'status': '204', 'connection': 'close', 'content-length': '0', 'x-openstack-request-id': 'req-f55c567a-1aa2-4844-b34b-460fdcf787c2'}
+        Body:
+}}}
+
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 203, in test_update_router_set_gateway
+    'network_id': CONF.network.public_network_id})
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 338, in update_router
+    return self._update_router(router_id, set_enable_snat=False, **kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 326, in _update_router
+    resp, body = self.put(uri, update_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 315, in put
+    return self.request('PUT', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 675, in _error_checker
+    raise exceptions.NotFound(resp_body)
+NotFound: Object not found
+Details: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+
+-------------------- >> begin captured logging << --------------------
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_set_gateway): 201 POST http://10.206.44.175:9696/v2.0/routers 7.527s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {}, "name": "router--1705182251", "admin_state_up": false}}
+    Response - Headers: {'status': '201', 'content-length': '213', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:49 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-390dbb54-7504-4916-89d7-69c9de2aca27'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--1705182251", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "b5dc5179-b2a4-4612-82c1-0bd26cce8608"}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_set_gateway): 200 GET http://10.206.44.175:9696/v2.0/routers/b5dc5179-b2a4-4612-82c1-0bd26cce8608 0.034s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '213', 'content-location': 'http://10.206.44.175:9696/v2.0/routers/b5dc5179-b2a4-4612-82c1-0bd26cce8608', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:49 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-73a63c06-9d91-453b-b882-ee552d08b76c'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--1705182251", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "b5dc5179-b2a4-4612-82c1-0bd26cce8608"}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_set_gateway): 404 PUT http://10.206.44.175:9696/v2.0/routers/b5dc5179-b2a4-4612-82c1-0bd26cce8608 0.093s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9"}, "name": "router--1705182251", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:49 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-2ef3fcdc-d4cd-4245-a822-661af1bd7236'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:_run_cleanups): 200 GET http://10.206.44.175:9696/v2.0/ports?device_id=b5dc5179-b2a4-4612-82c1-0bd26cce8608 0.019s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '13', 'content-location': 'http://10.206.44.175:9696/v2.0/ports?device_id=b5dc5179-b2a4-4612-82c1-0bd26cce8608', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:48:49 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-1d574855-320c-4a33-9389-4251ef01b215'}
+        Body: {"ports": []}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:_run_cleanups): 204 DELETE http://10.206.44.175:9696/v2.0/routers/b5dc5179-b2a4-4612-82c1-0bd26cce8608 6.366s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Fri, 18 Dec 2015 06:48:55 GMT', 'status': '204', 'connection': 'close', 'content-length': '0', 'x-openstack-request-id': 'req-f55c567a-1aa2-4844-b34b-460fdcf787c2'}
+        Body: 
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway_with_snat_explicit[id-b386c111-3b21-466d-880c-5e72b01e1a33]
+----------------------------------------------------------------------
+_StringException: pythonlogging:'': {{{
+2015-12-18 12:19:02,664 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_set_gateway_with_snat_explicit): 201 POST http://10.206.44.175:9696/v2.0/routers 6.872s
+2015-12-18 12:19:02,665 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {}, "name": "router--1425383246", "admin_state_up": false}}
+    Response - Headers: {'status': '201', 'content-length': '213', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:02 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-111e16bc-954e-4cb0-8c58-69f8af78b3bf'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--1425383246", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "a8da56bc-1782-44d7-a31e-a37a6eeb59b5"}}
+2015-12-18 12:19:02,690 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_set_gateway_with_snat_explicit): 200 GET http://10.206.44.175:9696/v2.0/routers/a8da56bc-1782-44d7-a31e-a37a6eeb59b5 0.025s
+2015-12-18 12:19:02,691 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '213', 'content-location': 'http://10.206.44.175:9696/v2.0/routers/a8da56bc-1782-44d7-a31e-a37a6eeb59b5', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:02 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-bf166fab-05fb-435d-86e8-849a7a416e86'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--1425383246", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "a8da56bc-1782-44d7-a31e-a37a6eeb59b5"}}
+2015-12-18 12:19:02,783 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_set_gateway_with_snat_explicit): 404 PUT http://10.206.44.175:9696/v2.0/routers/a8da56bc-1782-44d7-a31e-a37a6eeb59b5 0.091s
+2015-12-18 12:19:02,783 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9", "enable_snat": true}, "name": "router--1425383246", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:02 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-37805add-775f-489d-a4b6-cd74eb543741'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+2015-12-18 12:19:02,802 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:_run_cleanups): 200 GET http://10.206.44.175:9696/v2.0/ports?device_id=a8da56bc-1782-44d7-a31e-a37a6eeb59b5 0.018s
+2015-12-18 12:19:02,803 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '13', 'content-location': 'http://10.206.44.175:9696/v2.0/ports?device_id=a8da56bc-1782-44d7-a31e-a37a6eeb59b5', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:02 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-f900af58-2fc7-4734-9999-fd0869c6c8a5'}
+        Body: {"ports": []}
+2015-12-18 12:19:11,042 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:_run_cleanups): 204 DELETE http://10.206.44.175:9696/v2.0/routers/a8da56bc-1782-44d7-a31e-a37a6eeb59b5 8.239s
+2015-12-18 12:19:11,043 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Fri, 18 Dec 2015 06:49:11 GMT', 'status': '204', 'connection': 'close', 'content-length': '0', 'x-openstack-request-id': 'req-723a3a54-acd7-41fd-a1ca-28bcb62770e2'}
+        Body:
+}}}
+
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/test.py", line 171, in wrapper
+    return func(*func_args, **func_kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 218, in test_update_router_set_gateway_with_snat_explicit
+    'enable_snat': True})
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 346, in update_router_with_snat_gw_info
+    return self._update_router(router_id, set_enable_snat=True, **kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 326, in _update_router
+    resp, body = self.put(uri, update_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 315, in put
+    return self.request('PUT', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 675, in _error_checker
+    raise exceptions.NotFound(resp_body)
+NotFound: Object not found
+Details: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+
+-------------------- >> begin captured logging << --------------------
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_set_gateway_with_snat_explicit): 201 POST http://10.206.44.175:9696/v2.0/routers 6.872s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {}, "name": "router--1425383246", "admin_state_up": false}}
+    Response - Headers: {'status': '201', 'content-length': '213', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:02 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-111e16bc-954e-4cb0-8c58-69f8af78b3bf'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--1425383246", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "a8da56bc-1782-44d7-a31e-a37a6eeb59b5"}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_set_gateway_with_snat_explicit): 200 GET http://10.206.44.175:9696/v2.0/routers/a8da56bc-1782-44d7-a31e-a37a6eeb59b5 0.025s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '213', 'content-location': 'http://10.206.44.175:9696/v2.0/routers/a8da56bc-1782-44d7-a31e-a37a6eeb59b5', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:02 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-bf166fab-05fb-435d-86e8-849a7a416e86'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--1425383246", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "a8da56bc-1782-44d7-a31e-a37a6eeb59b5"}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_set_gateway_with_snat_explicit): 404 PUT http://10.206.44.175:9696/v2.0/routers/a8da56bc-1782-44d7-a31e-a37a6eeb59b5 0.091s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9", "enable_snat": true}, "name": "router--1425383246", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:02 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-37805add-775f-489d-a4b6-cd74eb543741'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:_run_cleanups): 200 GET http://10.206.44.175:9696/v2.0/ports?device_id=a8da56bc-1782-44d7-a31e-a37a6eeb59b5 0.018s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '13', 'content-location': 'http://10.206.44.175:9696/v2.0/ports?device_id=a8da56bc-1782-44d7-a31e-a37a6eeb59b5', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:02 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-f900af58-2fc7-4734-9999-fd0869c6c8a5'}
+        Body: {"ports": []}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:_run_cleanups): 204 DELETE http://10.206.44.175:9696/v2.0/routers/a8da56bc-1782-44d7-a31e-a37a6eeb59b5 8.239s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Fri, 18 Dec 2015 06:49:11 GMT', 'status': '204', 'connection': 'close', 'content-length': '0', 'x-openstack-request-id': 'req-723a3a54-acd7-41fd-a1ca-28bcb62770e2'}
+        Body: 
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway_without_snat[id-96536bc7-8262-4fb2-9967-5c46940fa279]
+----------------------------------------------------------------------
+_StringException: pythonlogging:'': {{{
+2015-12-18 12:19:18,212 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_set_gateway_without_snat): 201 POST http://10.206.44.175:9696/v2.0/routers 7.168s
+2015-12-18 12:19:18,212 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {}, "name": "router--601841941", "admin_state_up": false}}
+    Response - Headers: {'status': '201', 'content-length': '212', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:18 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-1d6ccde7-689c-4664-854b-99079126c3c3'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--601841941", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "98725326-8b89-465a-a2e5-40107d659a07"}}
+2015-12-18 12:19:18,238 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_set_gateway_without_snat): 200 GET http://10.206.44.175:9696/v2.0/routers/98725326-8b89-465a-a2e5-40107d659a07 0.025s
+2015-12-18 12:19:18,238 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '212', 'content-location': 'http://10.206.44.175:9696/v2.0/routers/98725326-8b89-465a-a2e5-40107d659a07', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:18 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-72875e86-d162-4745-853e-3bb8a88ae01e'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--601841941", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "98725326-8b89-465a-a2e5-40107d659a07"}}
+2015-12-18 12:19:18,327 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_set_gateway_without_snat): 404 PUT http://10.206.44.175:9696/v2.0/routers/98725326-8b89-465a-a2e5-40107d659a07 0.088s
+2015-12-18 12:19:18,328 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9", "enable_snat": false}, "name": "router--601841941", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:18 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-2ce51202-38f9-4eb1-9d1b-bd9923ba7599'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+2015-12-18 12:19:18,347 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:_run_cleanups): 200 GET http://10.206.44.175:9696/v2.0/ports?device_id=98725326-8b89-465a-a2e5-40107d659a07 0.018s
+2015-12-18 12:19:18,347 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '13', 'content-location': 'http://10.206.44.175:9696/v2.0/ports?device_id=98725326-8b89-465a-a2e5-40107d659a07', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:18 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-25f328a2-741e-43de-b2cc-390c227423bf'}
+        Body: {"ports": []}
+2015-12-18 12:19:26,412 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:_run_cleanups): 204 DELETE http://10.206.44.175:9696/v2.0/routers/98725326-8b89-465a-a2e5-40107d659a07 8.064s
+2015-12-18 12:19:26,412 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Fri, 18 Dec 2015 06:49:26 GMT', 'status': '204', 'connection': 'close', 'content-length': '0', 'x-openstack-request-id': 'req-0fb470f9-5fa4-4c30-abd3-b700709721e8'}
+        Body:
+}}}
+
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/test.py", line 171, in wrapper
+    return func(*func_args, **func_kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 233, in test_update_router_set_gateway_without_snat
+    'enable_snat': False})
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 346, in update_router_with_snat_gw_info
+    return self._update_router(router_id, set_enable_snat=True, **kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 326, in _update_router
+    resp, body = self.put(uri, update_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 315, in put
+    return self.request('PUT', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 675, in _error_checker
+    raise exceptions.NotFound(resp_body)
+NotFound: Object not found
+Details: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+
+-------------------- >> begin captured logging << --------------------
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_set_gateway_without_snat): 201 POST http://10.206.44.175:9696/v2.0/routers 7.168s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {}, "name": "router--601841941", "admin_state_up": false}}
+    Response - Headers: {'status': '201', 'content-length': '212', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:18 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-1d6ccde7-689c-4664-854b-99079126c3c3'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--601841941", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "98725326-8b89-465a-a2e5-40107d659a07"}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_set_gateway_without_snat): 200 GET http://10.206.44.175:9696/v2.0/routers/98725326-8b89-465a-a2e5-40107d659a07 0.025s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '212', 'content-location': 'http://10.206.44.175:9696/v2.0/routers/98725326-8b89-465a-a2e5-40107d659a07', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:18 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-72875e86-d162-4745-853e-3bb8a88ae01e'}
+        Body: {"router": {"status": "ACTIVE", "external_gateway_info": null, "name": "router--601841941", "admin_state_up": false, "tenant_id": "095c9adce888452cb0e6cf0a61df1ba3", "id": "98725326-8b89-465a-a2e5-40107d659a07"}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_set_gateway_without_snat): 404 PUT http://10.206.44.175:9696/v2.0/routers/98725326-8b89-465a-a2e5-40107d659a07 0.088s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9", "enable_snat": false}, "name": "router--601841941", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:18 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-2ce51202-38f9-4eb1-9d1b-bd9923ba7599'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:_run_cleanups): 200 GET http://10.206.44.175:9696/v2.0/ports?device_id=98725326-8b89-465a-a2e5-40107d659a07 0.018s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'status': '200', 'content-length': '13', 'content-location': 'http://10.206.44.175:9696/v2.0/ports?device_id=98725326-8b89-465a-a2e5-40107d659a07', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:18 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-25f328a2-741e-43de-b2cc-390c227423bf'}
+        Body: {"ports": []}
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:_run_cleanups): 204 DELETE http://10.206.44.175:9696/v2.0/routers/98725326-8b89-465a-a2e5-40107d659a07 8.064s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Fri, 18 Dec 2015 06:49:26 GMT', 'status': '204', 'connection': 'close', 'content-length': '0', 'x-openstack-request-id': 'req-0fb470f9-5fa4-4c30-abd3-b700709721e8'}
+        Body: 
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: tempest.api.network.test_routers.RoutersTest.test_update_router_unset_gateway[id-ad81b7ee-4f81-407b-a19c-17e623f763e8]
+----------------------------------------------------------------------
+_StringException: pythonlogging:'': {{{
+2015-12-18 12:19:26,457 8421 INFO     [tempest_lib.common.rest_client] Request (RoutersTest:test_update_router_unset_gateway): 404 POST http://10.206.44.175:9696/v2.0/routers 0.043s
+2015-12-18 12:19:26,457 8421 DEBUG    [tempest_lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9"}, "name": "router--1061235273", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:26 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-ec4c1d4b-ed73-4d99-9a95-52996bf21539'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+}}}
+
+Traceback (most recent call last):
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/test_routers.py", line 244, in test_update_router_unset_gateway
+    external_network_id=CONF.network.public_network_id)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/base_routers.py", line 32, in _create_router
+    external_network_id, enable_snat)
+  File "/usr/share/openstack-tempest-kilo/tempest/api/network/base.py", line 272, in create_router
+    admin_state_up=admin_state_up, **kwargs)
+  File "/usr/share/openstack-tempest-kilo/tempest/services/network/json/network_client.py", line 297, in create_router
+    resp, body = self.post(uri, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 252, in post
+    return self.request('POST', url, extra_headers, headers, body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 629, in request
+    resp, resp_body)
+  File "/usr/lib/python2.7/site-packages/tempest_lib/common/rest_client.py", line 675, in _error_checker
+    raise exceptions.NotFound(resp_body)
+NotFound: Object not found
+Details: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+
+-------------------- >> begin captured logging << --------------------
+tempest_lib.common.rest_client: INFO: Request (RoutersTest:test_update_router_unset_gateway): 404 POST http://10.206.44.175:9696/v2.0/routers 0.043s
+tempest_lib.common.rest_client: DEBUG: Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"router": {"external_gateway_info": {"network_id": "0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9"}, "name": "router--1061235273", "admin_state_up": false}}
+    Response - Headers: {'status': '404', 'content-length': '137', 'connection': 'close', 'date': 'Fri, 18 Dec 2015 06:49:26 GMT', 'content-type': 'application/json; charset=UTF-8', 'x-openstack-request-id': 'req-ec4c1d4b-ed73-4d99-9a95-52996bf21539'}
+        Body: {"NeutronError": {"message": "Network 0cd9f802-fdee-4a15-bf6a-4fa641ce0fd9 could not be found", "type": "NetworkNotFound", "detail": ""}}
+--------------------- >> end captured logging << ---------------------
+
+----------------------------------------------------------------------
+Ran 14 tests in 309.749s
+
+
